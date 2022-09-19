@@ -1,38 +1,248 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=PT+Sans");
+
+body {
+  background: rgba(196, 196, 196, 0.1);
+  font-family: "PT Sans", sans-serif;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: #1f82dd;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-container {
   display: flex;
   flex-direction: column;
+  padding-top: 90px;
   align-items: center;
+  width: 400px;
+  position: relative;
+  margin: 50px auto;
+  background: #ffffff;
+  width: 500px;
+  height: 600px;
+  border: 1px solid #b0b1b6;
+}
+
+.container-label {
+  font-weight: 800;
+  font-size: 32px;
+}
+
+/* .form {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+} */
+.input-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+.input-container label {
+  font-weight: 600px;
+  font-size: 12px;
+  margin-bottom: 8px;
 }
 
-.App-link {
-  color: #61dafb;
+.form input,
+button {
+  padding: 0px 16px 0px 24px;
+  width: 418px;
+  height: 56px;
+  border: 1px solid #dddddf;
+  border-radius: 100px;
+  color: #51525d;
+  background: inherit;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button-container button {
+  width: 324px;
+  height: 52px;
+  border: 1px solid #dddddf;
+}
+.button-container button:hover {
+  border: 2px solid #dddddf;
+}
+
+.form-container p {
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration-line: underline;
+  color: #1f82dd;
+}
+
+/* Dashboard */
+
+/* Header */
+
+.header {
+  width: 100%;
+  position: relative;
+  height: 60px;
+  display: flex;
+  background: #1b5ff9;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 20px;
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin: 18px;
+  text-shadow: 0 0;
+}
+
+/* Users live container */
+
+.menu {
+  display: flex;
+  margin: 20px;
+}
+
+.menu > li > a {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 0;
+  text-decoration: none;
+}
+
+.leftMenu {
+  display: flex;
+  color: #fff;
+  margin: 20px;
+}
+
+.leftMenu > li {
+  margin: 0 10px;
+}
+
+.leftMenu > li > a {
+  color: #fff;
+}
+
+.leftMenu > li > a.active {
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 60px);
+  overflow: hidden;
+}
+.listOfUsers {
+  width: 40%;
+  height: 100%;
+  overflow-x: hidden;
+  border-right: 1px solid #ccc;
+}
+.displayName {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.displayName.active {
+  background: #ccc;
+}
+
+.displayName .displayPic {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.displayName .displayPic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.messageStyle {
+  background: skyblue;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.messageSections {
+  height: calc(100% - 90px);
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  top: 40px;
+}
+
+.onlineStatus {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #16e316;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 #16e316;
+}
+.onlineStatus.off {
+  background: green;
+  box-shadow: 0 0 0 0;
+}
+
+/* Icon close */
+.close {
+  position: absolute;
+  right: 32px;
+  top: 5px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before,
+.close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+/* user info */
+
+.userInfoContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0px 24px;
+  cursor: pointer;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px;
 }
